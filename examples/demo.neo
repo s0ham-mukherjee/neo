@@ -1,0 +1,71 @@
+// Demo Program in The Neo Programming Language (.neo)
+
+class SmartDevice {
+public:
+    int id;
+    int batteryLevel;
+
+    void initialize(int deviceId, int initialBattery) {
+        this->id = deviceId;
+        this->batteryLevel = initialBattery;
+    }
+
+    void charge(int amount) {
+        this->batteryLevel = this->batteryLevel + amount;
+        if (this->batteryLevel > 100) {
+            this->batteryLevel = 100;
+        }
+        print_str("Device #");
+        print_int(this->id);
+        print_str(" charged! Current battery: ");
+        print_int(this->batteryLevel);
+        println_str("%");
+    }
+
+    int getBattery() {
+        return this->batteryLevel;
+    }
+};
+
+int main() {
+    println_str("===============================================");
+    println_str("   Welcome to The Neo Programming Language!");
+    println_str("===============================================");
+
+    // 1. Object-Oriented Programming (OOP) Class Demo
+    SmartDevice phone;
+    phone.initialize(101, 45);
+
+    println_str("\n[1] OOP SmartDevice Status:");
+    phone.charge(30);
+
+    // 2. Loop & Mathematical Computation Demo
+    println_str("\n[2] Computing Sum of Squares (1 to 5):");
+    int sum = 0;
+    for (int i = 1; i <= 5; i = i + 1) {
+        int square = i * i;
+        sum = sum + square;
+        print_str("  i = ");
+        print_int(i);
+        print_str(" -> square = ");
+        println_int(square);
+    }
+
+    print_str("Total Sum of Squares: ");
+    println_int(sum);
+
+    // 3. Ternary & Conditional Logic Demo
+    println_str("\n[3] System Diagnostic Check:");
+    int isHealthy = (phone.getBattery() >= 50) ? 1 : 0;
+    if (isHealthy == 1) {
+        println_str("System Status: OPTIMAL [Battery Healthy]");
+    } else {
+        println_str("System Status: WARNING [Low Battery]");
+    }
+
+    println_str("\n===============================================");
+    println_str("   Neo Execution Completed Successfully!");
+    println_str("===============================================");
+
+    return 0;
+}

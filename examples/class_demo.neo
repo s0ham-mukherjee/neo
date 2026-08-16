@@ -1,0 +1,41 @@
+class BankAccount {
+public:
+    int balance;
+
+    void deposit(int amount) {
+        this->balance = this->balance + amount;
+        print_str("Deposited: $");
+        println_int(amount);
+    }
+
+    void withdraw(int amount) {
+        if (this->balance >= amount) {
+            this->balance = this->balance - amount;
+            print_str("Withdrew: $");
+            println_int(amount);
+        } else {
+            println_str("Insufficient funds!");
+        }
+    }
+
+    int getBalance() {
+        return this->balance;
+    }
+};
+
+int main() {
+    println_str("--- Neo OOP BankAccount Demo ---");
+    BankAccount acc;
+    acc.balance = 500;
+
+    print_str("Initial Balance: $");
+    println_int(acc.getBalance());
+
+    acc.deposit(250);
+    acc.withdraw(100);
+
+    print_str("Final Balance: $");
+    println_int(acc.getBalance());
+
+    return 0;
+}

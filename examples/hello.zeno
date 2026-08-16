@@ -1,0 +1,11 @@
+int main() {
+    println_str("Hello from Zeno Programming Language!");
+    println_str("-----------------------------------");
+
+    int a = 40;
+    int b = 2;
+    println_str("Computing 40 + 2 in Zeno:");
+    println_int(a + b);
+
+    return 0;
+}

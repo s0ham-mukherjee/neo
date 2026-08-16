@@ -1,0 +1,18 @@
+int computeSum(int limit) {
+    int total = 0;
+    for (int i = 1; i <= limit; i = i + 1) {
+        total = total + (i * 2 + 0) - (i * 0);
+    }
+    return total;
+}
+
+int main() {
+    println_str("--- Neo Intensive Benchmark Suite ---");
+    int result = computeSum(100000);
+
+    print_str("Sum (1..100000 * 2): ");
+    println_int(result);
+
+    println_str("Benchmark calculation complete!");
+    return 0;
+}
